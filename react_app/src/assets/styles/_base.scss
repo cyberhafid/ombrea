@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-slate-600);
+  font-size: var(--font-base);
+  margin: 0;
+}
+
+a {
+  transition: color 0.3s ease-in-out;
+  color: var(--color-ob-green-primary);
+  text-decoration: none;
+  &:hover {
+    color: var(--color-ob-green-dark);
+  }
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  margin: 0;
+  padding: 0;
+  color: var(--color-ob-green-dark);
+}
+
+h1 {
+  font-size: var(--font-4xl);
+  line-height: var(--font-4xl);
+}
+
+h2 {
+  font-size: var(--font-3xl);
+  line-height: var(--font-3xl);
+}
+
+h3 {
+  font-size: var(--font-2xl);
+  line-height: var(--font-2xl);
+}
+
+h4 {
+  font-size: var(--font-xl);
+  line-height: var(--font-xl);
+}
+
+h5 {
+  font-size: var(--font-lg);
+}
+
+// Align
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+th {
+  text-align: unset;
+}
+
+// Code
+code,
+kbd,
+pre,
+samp {
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 1em;
+}
+
+pre {
+  display: block;
+  font-size: 15px;
+  max-width: 100%;
+  overflow: auto;
+  page-break-inside: avoid;
+  white-space: pre;
+  word-wrap: break-word;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}

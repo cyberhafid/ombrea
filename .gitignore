@@ -1,0 +1,13 @@
+.venv
+venv
+.env
+env
+
+*.pyc
+
+node_modules
+
+test.db
+test.db
+.pytest_cache
+__pycache__

@@ -1,0 +1,49 @@
+.ant-btn {
+    box-shadow: unset;
+    &-default {
+        filter: var(--drop-shadow-lg);
+        &:hover {
+            color: black !important;
+            border-color: #f7f1f1 !important;
+        }
+        &:disabled:hover {
+            color: rgba(0, 0, 0, 0.25) !important;
+            border-color: #d9d9d9 !important;
+        }
+    }
+
+    &-primary {
+        filter: var(--drop-shadow-primary);
+    }
+    &-dangerous {
+        filter: drop-shadow(0 10px 8px #ff4d5017) drop-shadow(0 4px 3px #ff4d5019);
+    }
+
+    &:hover {
+        transform: scale(1.02);
+    }
+    &:disabled:hover {
+        transform: unset;
+    }
+}
+
+.ant-float-btn {
+    position: sticky;
+    left: 100vw;
+    bottom: var(--spacing-2);
+    transition: 0.3s all ease-in-out;
+    width: 42px !important;
+    height: 42px !important;
+    &-icon {
+        width: 36px !important;
+        height: 36px !important;
+        margin: unset !important;
+    }
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.ant-input-number-sm {
+    border-radius: var(--rounded-xl) !important;
+}

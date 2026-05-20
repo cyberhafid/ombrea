@@ -1,0 +1,49 @@
+.form {
+  &__tooltip {
+    color: var(--color-slate-400);
+    cursor: pointer;
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+  }
+
+  &__error {
+    color: var(--color-red-500);
+  }
+
+  &__hint {
+    color: var(--color-dark-gray);
+    display: block;
+    font-size: var(--font-xs);
+    margin-top: 5px;
+
+    &--error {
+      color: var(--color-red-500);
+    }
+  }
+
+  &__group {
+    border: 1px solid #d9d9d9;
+    border-radius: var(--rounded-xl);
+    padding: var(--spacing-2);
+    background-color: var(--color-white);
+  }
+}
+
+// On 3xl screens
+@media (min-width: 1536px) and (max-width: 1850px) {
+  .form {
+    &__control {
+      &-radio {
+        flex-direction: column;
+        row-gap: 8px;
+      }
+    }
+  }
+}

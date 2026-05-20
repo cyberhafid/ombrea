@@ -1,0 +1,36 @@
+.ant-collapse {
+  background-color: var(--color-slate-100);
+
+  &-ghost {
+    background-color: transparent;
+  }
+
+  &.header-simulator {
+    .ant-collapse-header {
+      padding: 0 !important;
+      align-items: center;
+      width: 10%;
+      .ant-collapse-header-text {
+        flex: none !important;
+      }
+      .ant-collapse-expand-icon {
+        color: var(--color-ob-green-dark);
+        margin-left: 0;
+        padding-inline-start: 0 !important;
+        svg {
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: var(--color-ob-green-primary);
+          }
+        }
+      }
+    }
+    .ant-collapse-content-box {
+      padding: 0 !important;
+      margin-top: 12px;
+      display: grid;
+      gap: 10px;
+      font-size: var(--font-base);
+    }
+  }
+}

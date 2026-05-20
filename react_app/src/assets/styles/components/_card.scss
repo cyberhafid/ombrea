@@ -1,0 +1,55 @@
+@use '../utils';
+@use "../mixins/media-breakpoint";
+
+.card {
+  background-color: var(--color-green-50);
+  border-radius: var(--rounded-xl);
+  padding: var(--spacing-3);
+  color: var(--color-slate-600);
+
+  &__header {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+
+    @include media-breakpoint.media-breakpoint-down('sm') {
+      font-size: var(--font-base);
+    }
+  }
+
+  &__title {
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    margin: 0 0 var(--spacing-2) 0;
+  }
+
+  &__label {
+    color: var(--color-gray-400);
+    font-size: var(--font-base);
+  }
+
+  &--outline {
+    border: 1px solid var(--color-slate-300);
+    box-shadow: var(--shadow-none);
+  }
+
+  &--infos {
+    h2 {
+      margin: 0 0 16px;
+    }
+
+    h3,
+    h4,
+    h5 {
+      color: var(--color-slate-400);
+      letter-spacing: 2px;
+    }
+  }
+
+  &--px-0 {
+    padding: var(--spacing-3) 0;
+  }
+
+  &--height {
+    height: fit-content;
+  }
+}

@@ -1,0 +1,96 @@
+@use "../mixins/media-breakpoint";
+@use "../variables";
+
+$sides: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  y: top-bottom,
+  x: left-right
+) !default;
+
+@each $keyMargin, $margin in variables.$spacings {
+  // Margin
+  .m-#{$keyMargin} {
+    margin: #{$margin} !important;
+  }
+
+  // Responsive for .m-
+  @each $keyBreakpoint, $breakpoint in variables.$grid-breakpoints {
+    .#{$keyBreakpoint}\:m-#{$keyMargin} {
+      @include media-breakpoint.media-breakpoint-down($keyBreakpoint) {
+        margin: #{$margin} !important;
+      }
+    }
+  }
+
+  // Margin for $sides
+  @each $keySide, $side in $sides {
+    .m#{$keySide}-#{$keyMargin} {
+      @if $keySide == y {
+        margin-bottom: #{$margin} !important;
+        margin-top: #{$margin} !important;
+      } @else if $keySide == x {
+        margin-left: #{$margin} !important;
+        margin-right: #{$margin} !important;
+      } @else {
+        margin-#{$side}: #{$margin} !important;
+      }
+    }
+
+    // Responsive for .mX-
+    @each $keyBreakpoint, $breakpoint in variables.$grid-breakpoints {
+      .#{$keyBreakpoint}\:m#{$keySide}-#{$keyMargin} {
+        @include media-breakpoint.media-breakpoint-down($keyBreakpoint) {
+          @if $keySide == y {
+            margin-bottom: #{$margin} !important;
+            margin-top: #{$margin} !important;
+          } @else if$keySide == x {
+            margin-left: #{$margin} !important;
+            margin-right: #{$margin} !important;
+          } @else {
+            margin-#{$side}: #{$margin} !important;
+          }
+        }
+      }
+    }
+  }
+
+  .p-#{$keyMargin} {
+    padding: #{$margin};
+  }
+
+  // Responsive for .p-
+  @each $keyBreakpoint, $breakpoint in variables.$grid-breakpoints {
+    .#{$keyBreakpoint}\:p-#{$keyMargin} {
+      @include media-breakpoint.media-breakpoint-down($keyBreakpoint) {
+        padding: #{$margin} !important;
+      }
+    }
+  }
+
+  // Padding for $sides
+  @each $keySide, $side in $sides {
+    .p#{$keySide}-#{$keyMargin} {
+      @if $keySide == y {
+        padding-bottom: #{$margin};
+        padding-top: #{$margin};
+      } @else if $keySide == x {
+        padding-left: #{$margin};
+        padding-right: #{$margin};
+      } @else {
+        padding-#{$side}: #{$margin};
+      }
+    }
+
+    // Responsive for .pX-
+    @each $keyBreakpoint, $breakpoint in variables.$grid-breakpoints {
+      .#{$keyBreakpoint}\:p#{$keySide}-#{$keyMargin} {
+        @include media-breakpoint.media-breakpoint-down($keyBreakpoint) {
+          padding-#{$side}: #{$margin} !important;
+        }
+      }
+    }
+  }
+}

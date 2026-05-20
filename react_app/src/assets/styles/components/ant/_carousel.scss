@@ -1,0 +1,33 @@
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next,
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-next:hover {
+  font-size: inherit;
+  color: currentColor;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-prev:focus,
+.ant-carousel .slick-prev:hover {
+  z-index: 2;
+  color: #89918f;
+}
+
+.ant-carousel .slick-next,
+.ant-carousel .slick-next:focus,
+.ant-carousel .slick-next:hover {
+  z-index: 2;
+  color: #89918f;
+}
+
+.ant-carousel .slick-dots {
+    display: none !important;
+}
+
+.ant-carousel .slick-list {
+  border-radius: var(--rounded-xl);
+}
+
+.ant-carousel {
+  max-width: 400px;
+}

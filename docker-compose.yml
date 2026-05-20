@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  fastapi_api:
+    build:
+      context: ./fastapi_api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./fastapi_api:/usr/src/app
+    environment:
+      - POSTGRES_HOST=postgres_db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres123
+      - POSTGRES_DB=mydb
+      - INFLUXDB_URL=http://influxdb:8086
+      - INFLUXDB_TOKEN=AdminTokenValue
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+      influxdb:
+        condition: service_started
+    networks:
+      - app_network
+
+  postgres_db:
+    image: postgres:17
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    hostname: postgres_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres123
+      - POSTGRES_DB=mydb
+    networks:
+      - app_network
+    ports:
+      - "5435:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d mydb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  react_app:
+    build:
+      context: ./react_app
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./react_app:/my-sites
+      - /my-sites/node_modules
+    networks:
+      - app_network
+    environment:
+      - VITE_API_URL=http://localhost:8000
+
+  influxdb:
+    image: influxdb:2.6
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=Admin123!
+      - DOCKER_INFLUXDB_INIT_ORG=ombrea
+      - DOCKER_INFLUXDB_INIT_BUCKET=sensors
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=AdminTokenValue
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  influxdb_data:

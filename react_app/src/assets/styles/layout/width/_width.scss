@@ -1,0 +1,118 @@
+@use '../../utils';
+@use "../../mixins/media-breakpoint";
+@use "../../variables";
+
+.w-col-10 {
+  width: 10%;
+}
+
+.w-col-20 {
+  width: 20%;
+}
+
+.w-col-30 {
+  width: 30%;
+}
+
+.w-col-40 {
+  width: 40%;
+}
+
+.w-col-50 {
+  width: 50%;
+}
+
+.w-col-60 {
+  width: 60%;
+}
+
+.w-col-70 {
+  width: 70%;
+}
+
+.w-col-80 {
+  width: 80%;
+}
+
+.w-col-90 {
+  width: 90%;
+}
+
+.w-col-100 {
+  width: 100%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+
+@each $key, $breakpoint in variables.$grid-breakpoints {
+  .#{$key}\:w-col-10 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 10%;
+    }
+  }
+
+  .#{$key}\:w-col-20 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 20%;
+    }
+  }
+
+  .#{$key}\:w-col-30 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 30%;
+    }
+  }
+
+  .#{$key}\:w-col-40 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 40%;
+    }
+  }
+
+  .#{$key}\:w-col-50 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 50%;
+    }
+  }
+
+  .#{$key}\:w-col-60 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 60%;
+    }
+  }
+
+  .#{$key}\:w-col-70 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 70%;
+    }
+  }
+
+  .#{$key}\:w-col-80 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 80%;
+    }
+  }
+
+  .#{$key}\:w-col-90 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 90%;
+    }
+  }
+
+  .#{$key}\:w-col-100 {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      width: 100%;
+    }
+  }
+}

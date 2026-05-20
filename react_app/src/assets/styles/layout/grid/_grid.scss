@@ -1,0 +1,67 @@
+@use '../../mixins/media-breakpoint';
+@use 'cols';
+@use 'rows';
+@use "../../variables";
+
+.grid {
+  display: grid;
+}
+
+@each $key, $breakpoint in variables.$grid-breakpoints {
+  .#{$key}\:grid {
+    @include media-breakpoint.media-breakpoint-down($key) {
+      display: grid;
+    }
+  }
+}
+
+// Gaps
+@each $keyGap, $space in variables.$spacings {
+  .gap-#{$keyGap} {
+    gap: #{$space};
+  }
+
+  @each $keyBreak, $breakpoint in variables.$grid-breakpoints {
+    .#{$keyBreak}\:gap-#{$keyGap} {
+      @include media-breakpoint.media-breakpoint-down($keyBreak) {
+        gap: #{$space} !important;
+      }
+    }
+    // Order
+    .#{$keyBreak}\:order-first {
+      @include media-breakpoint.media-breakpoint-down($keyBreak) {
+        order: -99 !important;
+      }
+    }
+    .#{$keyBreak}\:order-last {
+      @include media-breakpoint.media-breakpoint-down($keyBreak) {
+        order: 99 !important;
+      }
+    }
+    .#{$keyBreak}\:order-1 {
+      @include media-breakpoint.media-breakpoint-down($keyBreak) {
+        order: 1 !important;
+      }
+
+      .#{$keyBreak}\:order-2 {
+        @include media-breakpoint.media-breakpoint-down($keyBreak) {
+          order: 2 !important;
+        }
+      }
+    }
+  }
+}
+
+// Masonary
+.grid-masonary {
+  display: flex;
+  width: auto;
+}
+
+.grid-masonary__item {
+  background-clip: padding-box;
+}
+
+.order-last {
+  order: 99;
+}

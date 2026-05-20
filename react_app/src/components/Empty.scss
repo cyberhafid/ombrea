@@ -1,0 +1,27 @@
+.empty {
+  &__icon {
+    color: #cbd5e1;
+  }
+
+  &__title {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    text-align: center;
+    &--small {
+      font-size: var(--font-base);
+    }
+  }
+
+  &__message {
+    font-size: var(--font-base);
+    text-align: center;
+    font-weight: var(--font-normal);
+    &--small {
+      font-size: var(--font-sm);
+    }
+  }
+
+  &--alone {
+    border-radius: var(--rounded-xl);
+  }
+}

@@ -1,0 +1,179 @@
+:root {
+  // Font Family
+  --font-sans: 'Roboto', sans-serif;
+  --font-serif: 'Raleway', sans-serif;
+
+  // Font Size
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-base: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+  --font-2xl: 22px;
+  --font-3xl: 26px;
+  --font-4xl: 32px;
+  --font-5xl: 40px;
+
+  // Font Weight
+  --font-light: 300;
+  --font-normal: 400;
+  --font-bold: 700;
+
+  /// Colors
+  --color-ob-green-dark: #1d7b33;
+  --color-ob-green: #63b32e;
+  --color-ob-yellow: #dbcd00;
+  --color-ob-green-dark-50: rgb(29 123 51 / 50%);
+  --color-ob-green-50: rgb(101 178 46 / 50%);
+  --color-ob-yellow-50: rgb(219 205 0 / 50%);
+  --color-ob-green-10: hsl(95deg 59% 44% / 10%);
+  --color-ob-green-primary: #2F983E;
+
+  // Alerts
+  --color-alert-blue-100: #0084f4;
+  --color-alert-blue-50: #66b5f8;
+  --color-alert-blue-30: #d5e9fa;
+  --color-orange-100: #ff7e32;
+  --color-orange-50: #ffc7a6;
+  --color-orange-30: #ffe8da;
+  --color-yellow-30: #fffaef;
+
+  // Slate
+  --color-slate-50: rgb(248 250 252);
+  --color-slate-100: rgb(241 245 249);
+  --color-slate-200: rgb(226 232 240);
+  --color-slate-300: rgb(203 213 225);
+  --color-slate-400: #89918F;
+  --color-slate-500: rgb(100 116 139);
+  --color-slate-600: rgb(71 85 105);
+  --color-slate-700: rgb(51 65 85);
+  --color-slate-800: rgb(30 41 59);
+  --color-slate-900: rgb(15 23 42);
+
+  // Blue
+  --color-blue-50: #cee2ff;
+  --color-blue-100: #b9d6ff;
+  --color-blue-200: #90beff;
+  --color-blue-300: #68a7ff;
+  --color-blue-400: #3f8fff;
+  --color-blue-500: #1677ff;
+  --color-blue-600: #005cdd;
+  --color-blue-700: #0045a5;
+  --color-blue-800: #002d6d;
+  --color-blue-900: #001635;
+
+  // Red
+  --color-red-50: rgb(254 242 242);
+  --color-red-100: rgb(254 226 226);
+  --color-red-200: rgb(254 202 202);
+  --color-red-300: rgb(252 165 165);
+  --color-red-400: rgb(248 113 113);
+  --color-red-500: rgb(239 68 68);
+  --color-red-600: rgb(220 38 38);
+  --color-red-700: rgb(185 28 28);
+  --color-red-800: rgb(153 27 27);
+  --color-red-900: rgb(127 29 29);
+
+  // Green
+  --color-green-50: #FAFFFA;
+  --color-green-100: #dbf3db;
+  --color-green-200: #6efcc1;
+  --color-green-300: #24faa1;
+  --color-green-400: #8ed69f;
+  --color-green-500: #59B56F;
+  --color-green-600: #02693e;
+  --color-green-700: #02502f;
+  --color-green-800: #013721;
+  --color-green-900: #01190f;
+
+  // Yellow
+  --color-yellow-50: #FFF3DA;
+  --color-yellow-100: rgb(254 243 199);
+  --color-yellow-200: rgb(253 230 138);
+  --color-yellow-300: rgb(252 211 77);
+  --color-yellow-400: rgb(251 191 36);
+  --color-yellow-500: rgb(245 158 11);
+  --color-yellow-600: rgb(217 119 6);
+  --color-yellow-700: rgb(180 83 9);
+  --color-yellow-800: rgb(146 64 14);
+  --color-yellow-900: rgb(120 53 15);
+
+  // Neutral
+  --color-white: #fff;
+  --color-black: var(--color-slate-800);
+
+  // Drop Shadow
+  --drop-shadow-sm: drop-shadow(0 1px 1px rgb(0 0 0 / 5%));
+  --drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 10%)) drop-shadow(0 1px 1px rgb(0 0 0 / 6%));
+  --drop-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 7%)) drop-shadow(0 2px 2px rgb(0 0 0 / 6%));
+  --drop-shadow-lg: drop-shadow(0 10px 8px rgb(0 0 0 / 4%)) drop-shadow(0 4px 3px rgb(0 0 0 / 10%));
+  --drop-shadow-xl: drop-shadow(0 20px 13px rgb(0 0 0 / 3%)) drop-shadow(0 8px 5px rgb(0 0 0 / 8%));
+  --drop-shadow-2xl: drop-shadow(0 25px 25px rgb(0 0 0 / 15%));
+  --drop-shadow-none: drop-shadow(0 0 #0000);
+  --drop-shadow-green: drop-shadow(0px 10px 20px rgba(115, 164, 123, 0.25));
+  --drop-shadow-primary: drop-shadow(0 20px 13px #2f983f13) drop-shadow(0 8px 5px #2f983f18);
+
+  // Box Shadow
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px -1px rgb(0 0 0 / 10%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 25%);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 5%);
+  --shadow-none: 0 0 #0000;
+
+  // Spacing
+  --spacing-0: 0;
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+
+  // Padding
+  --padding-0: var(--spacing-0);
+  --padding-1: var(--spacing-1);
+  --padding-2: var(--spacing-2);
+  --padding-3: var(--spacing-3);
+  --padding-4: var(--spacing-4);
+
+  // Sidebars
+  --sidebar-width: 84px;
+  --sidebar-menu-width: 250px;
+  --sidebars-width: calc(var(--sidebar-width) + var(--sidebar-menu-width));
+
+  // Border Radius
+  --rounded-none: 0;
+  --rounded-sm: 2px;
+  --rounded: 4px;
+  --rounded-md: 6px;
+  --rounded-lg: 8px;
+  --rounded-xl: 16px;
+  --rounded-full: 9999px;
+
+  // Transitions
+  --transition-all-1: all 0.3s;
+  --transition-all-2: all 0.5s;
+  --transition-all-3: all 0.7s;
+}
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 320px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px
+) !default;
+
+// Spacings
+$spacings: (
+  0: 0,
+  1: 8px,
+  2: 16px,
+  3: 24px,
+  4: 32px,
+  5: 40px
+) !default;

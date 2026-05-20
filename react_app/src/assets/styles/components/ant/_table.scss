@@ -1,0 +1,10 @@
+.ant-table {
+  border: 1px solid var(--color-slate-200);
+  border-radius: 8px;
+
+  .ant-table-title {
+    background-color: var(--color-slate-200);
+    font-weight: var(--font-bold);
+    padding: 13px !important;
+  }
+}
