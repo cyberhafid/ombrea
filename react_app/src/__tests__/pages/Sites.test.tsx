@@ -19,8 +19,8 @@ const mockSites = [
 
 describe('Sites', () => {
   beforeEach(() => {
-    vi.mocked(hooks.useQuerySitesList).mockReturnValue({ data: mockSites } as any);
-    vi.mocked(hooks.useQuerySiteData).mockReturnValue({ data: [], isLoading: false } as any);
+    vi.mocked(hooks.useQuerySitesList).mockReturnValue({ data: mockSites } as unknown as ReturnType<typeof hooks.useQuerySitesList>);
+    vi.mocked(hooks.useQuerySiteData).mockReturnValue({ data: [], isLoading: false } as unknown as ReturnType<typeof hooks.useQuerySiteData>);
   });
 
   it('affiche la liste des sites', () => {

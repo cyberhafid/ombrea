@@ -2,7 +2,7 @@ import { HTMLAttributes, useState } from 'react';
 
 import { IconFilter } from '../Icons/IconFilter';
 // import { useClickOutside } from '@hooks';
-import { Button, Radio, RadioChangeEvent } from 'antd';
+import { RadioChangeEvent } from 'antd';
 import classNames from 'classnames';
 
 import './Table.scss';
@@ -12,7 +12,7 @@ interface ITableFilterProps extends HTMLAttributes<HTMLDivElement> {
   onFilter: (value: string) => void;
 }
 
-const TableFilter = ({ filters, children, onFilter }: ITableFilterProps) => {
+const TableFilter = ({ children, onFilter }: ITableFilterProps) => {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const [optionsSelected, setOptionsSelected] = useState<string>('');
 
@@ -22,15 +22,18 @@ const TableFilter = ({ filters, children, onFilter }: ITableFilterProps) => {
     setShowDropdown(false);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handlerFilter = (event: RadioChangeEvent) => {
     setOptionsSelected(event.target.value);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const emitFilter = () => {
     onFilter(optionsSelected);
     hideDropdown();
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const resetFilter = () => {
     setOptionsSelected('');
     onFilter('');
